@@ -8,5 +8,5 @@ export interface Artist{
     img:string;
     listeners:string;
     albums?:Album[];
-    musics?:Music[];
+    musics?:Music[] ;
 }

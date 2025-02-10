@@ -3,5 +3,6 @@ export interface Music{
     artistId:string;
     title:string ;
     views:string;
+    duration:string;
     img:string;
 }

@@ -7,14 +7,16 @@ const musics = [
         artistId:"1",
         title:"Ya Denya",
         img:"https://i1.sndcdn.com/artworks-000228763017-yj34kc-t500x500.jpg",
-        views:"200,000,000"
+        views:"200,000,000",
+        duration:"4:50"
     },
     {
         id:"2",
         artistId:"1",
         title:"El Kass Ydour",
         img:"https://i1.sndcdn.com/artworks-000228763017-yj34kc-t500x500.jpg",
-        views:"200,000,000"
+        views:"200,000,000",
+        duration:"4:50"
     }
 ];
 

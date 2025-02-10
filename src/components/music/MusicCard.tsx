@@ -2,8 +2,10 @@ import { FaPlay } from "react-icons/fa6";
 import { HiEllipsisHorizontal } from "react-icons/hi2";
 import { MdFavoriteBorder } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { useMusicContext } from "../../contexts/musicContext";
 
 const MusicCard = () => {
+  const music = useMusicContext();
   return (
     <div
       className="w-full grid md:grid-cols-4 grid-cols-3 grid-4
@@ -11,7 +13,7 @@ const MusicCard = () => {
     >
       <div className="col-span-2 flex items-center gap-x-2">
         <p className="text-neutral-300 text-sm font-medium pt-1 md:block hidden">
-          <span className="group-hover:hidden block w-5 h-5">1</span>
+          <span className="group-hover:hidden block w-5 h-5">{music.id}</span>
           <span className="group-hover:block hidden w-5 h-5 pt-0.5">
             <FaPlay />
           </span>
@@ -25,19 +27,21 @@ const MusicCard = () => {
           to={""}
           className="text-sm text-neutral-100 font-medium hover:underline ml-1 ease-in-out duration-100"
         >
-          Ya Denya
+          {music.title}
         </Link>
       </div>
       <div className="col-span-1 md:flex hidden items-center justify-center">
         <p className="text-sm text-neutral-400 font-medium group-hover:text-neutral-200 ease-in-out duraion-100">
-          240,000,000
+          {music.views}
         </p>
       </div>
       <div className="col-span-1 md:flex hidden items-center justify-end gap-x-3">
         <p className="w-6 text-neutral-400 flex items-center justify-end mr-4">
           <MdFavoriteBorder className="group-hover:block hidden text-xl" />
         </p>
-        <p className="text-base text-neutral-400 font-normal">4:50</p>
+        <p className="text-base text-neutral-400 font-normal">
+          {music.duration}
+        </p>
         <p className="w-6 text-neutral-400 flex items-center justify-end ">
           <HiEllipsisHorizontal className="group-hover:block hidden text-2xl"></HiEllipsisHorizontal>
         </p>
