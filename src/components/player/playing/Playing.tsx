@@ -10,7 +10,7 @@ const Playing = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
+  const [duration, setDuration] = useState(1);
 
   useEffect(() => {
     const audio = audioRef.current;

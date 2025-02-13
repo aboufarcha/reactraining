@@ -1,13 +1,6 @@
 import { Link } from "react-router-dom";
 import PlayBtn from "../playBtn/PlayBtn";
-import React, { useContext } from "react";
-import { AlbumContext, useAlbumContext } from "../../contexts/albumContext";
-// Define the props type
-interface AlbumCardProps {
-  AlbumImg: string;
-  AlbumName: string;
-  AlbumArtist: string; // Note the corrected spelling of AlbumTag
-}
+import { useAlbumContext } from "../../contexts/albumContext";
 
 const AlbumCard = ({}) => {
   const album = useAlbumContext();

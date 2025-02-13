@@ -1,12 +1,25 @@
-import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import ExternalApi from "../../api/externalApi";
+import useUserStore from "../../hooks/useUserStore";
+import { useNavigate } from "react-router-dom";
 
 type FormFields = {
-  email: string;
+  username: string;
   password: string;
 };
 
+const fetchLogin = async (data: any) => {
+  const response = await ExternalApi.post("/login/1", data);
+  console.log("data fetchLogin: ", response.data);
+  return response.data;
+};
+
 const LoginForm = () => {
+  const { setUsername } = useUserStore();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -14,7 +27,17 @@ const LoginForm = () => {
   } = useForm<FormFields>();
 
   const onSubmit: SubmitHandler<FormFields> = (data) => {
-    console.log(data);
+    console.log("onsubmit result : ", data);
+    axios
+      .post("https://wmwvg.wiremockapi.cloud/login/1", data)
+      .then((response) => {
+        console.log("data : ", response.data);
+        setUsername(response.data.username);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.error("Error fetching posts:", error);
+      });
   };
 
   return (
@@ -28,7 +51,7 @@ const LoginForm = () => {
         </label>
         <input
           type="text"
-          {...register("email", {
+          {...register("username", {
             required: "Email is required",
             minLength: {
               value: 8,
@@ -38,8 +61,10 @@ const LoginForm = () => {
           className="bg-black border border-white-300 mb-2 font-spotifyMix text-xl rounded-md focus:ring-primary-600 focus:border-primary-600 block w-full p-3.5"
           placeholder="Email or username"
         />
-        {errors.email && (
-          <p className="text-red-500 text-xs italic">{errors.email.message}</p>
+        {errors.username && (
+          <p className="text-red-500 text-xs italic">
+            {errors.username.message}
+          </p>
         )}
       </div>
       <div>

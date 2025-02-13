@@ -10,6 +10,7 @@ import { FiMaximize2 } from "react-icons/fi";
 
 const Player = () => {
   const [volume, setVolume] = useState(0.5);
+  console.log("Volume : ", volume);
 
   const handleVolume = (e: any) => {
     const volumeBar = e.target.value;

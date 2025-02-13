@@ -2,7 +2,6 @@ import { FaSpotify } from "react-icons/fa6";
 
 import { Link } from "react-router-dom";
 import LoginForm from "../../components/loginForm/LoginForm";
-import SocialNeworkForm from "../../components/loginForm/SocialNetworkForm";
 
 const Login = () => {
   return (

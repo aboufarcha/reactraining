@@ -12,7 +12,7 @@ const MusicList = () => {
       <div className="space-y-0">
         {artist.musics?.map((music) => {
           return (
-            <MusicContext.Provider value={music}>
+            <MusicContext.Provider key={music.id} value={music}>
               <MusicCard></MusicCard>
             </MusicContext.Provider>
           );

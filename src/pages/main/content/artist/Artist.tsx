@@ -31,7 +31,7 @@ const Artist = () => {
       <div className="w-full grid md:grid-cols-5 sm:grid-cols-3 grid-cols-2">
         {artistsDTO?.map((artist) => {
           return (
-            <ArtistContext.Provider value={artist}>
+            <ArtistContext.Provider key={artist.id} value={artist}>
               <ArtistCard></ArtistCard>
             </ArtistContext.Provider>
           );

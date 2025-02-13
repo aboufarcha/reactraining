@@ -1,7 +1,11 @@
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 import { Link } from "react-router-dom";
+import useUserStore from "../../hooks/useUserStore";
+import Avatar from "../avatar/Avatar";
 
 const Navbar = (className: any) => {
+  const { username } = useUserStore();
+  console.log("username : ", username);
   const handleBack = () => {
     window.history.back();
   };
@@ -31,17 +35,21 @@ const Navbar = (className: any) => {
       </div>
 
       {/* Buttons */}
-      <div className="flex items-center gap-x-5">
-        <button className="w-fit text-neutral-400 text-sm font-semibold hover:scale-105 ease-in-out duration-100">
-          Sign up
-        </button>
-        <Link
-          to="/login"
-          className="w-fit px-8 h-12 rounded-full bg-neutral-50 text-base text-neutral-900 font-semibold flex items-center justify-center hover:scale-105 ease-in-out duration-100"
-        >
-          Log in
-        </Link>
-      </div>
+      {username === "" ? (
+        <div className="flex items-center gap-x-5">
+          <button className="w-fit text-neutral-400 text-sm font-semibold hover:scale-105 ease-in-out duration-100">
+            Sign up
+          </button>
+          <Link
+            to="/login"
+            className="w-fit px-8 h-12 rounded-full bg-neutral-50 text-base text-neutral-900 font-semibold flex items-center justify-center hover:scale-105 ease-in-out duration-100"
+          >
+            Log in
+          </Link>
+        </div>
+      ) : (
+        <Avatar></Avatar>
+      )}
     </div>
   );
 };
