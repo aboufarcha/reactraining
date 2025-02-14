@@ -14,6 +14,12 @@ const Navbar = (className: any) => {
     window.history.forward();
   };
 
+  const options = ["Option 1", "Option 2", "Option 3", "Option 4"];
+
+  const handleSelect = (selectedOption: string) => {
+    console.log("Selected:", selectedOption);
+  };
+
   return (
     <div
       className={`w-full ${className} flex items-center justify-between md:pl-4 md:pr-7 sm:pr-5 pr-4 py-2 z-50`}
@@ -48,7 +54,9 @@ const Navbar = (className: any) => {
           </Link>
         </div>
       ) : (
-        <Avatar></Avatar>
+        <>
+          <Avatar></Avatar>
+        </>
       )}
     </div>
   );
