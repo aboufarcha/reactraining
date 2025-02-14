@@ -4,6 +4,7 @@ import ArtistDetail from "./pages/detail/artist/ArtistDetail";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Login from "./pages/login/Login";
 import Preferences from "./pages/preferences/Preferences";
+import Account from "./pages/account/Account";
 
 function App() {
   const queryClient = new QueryClient();
@@ -17,6 +18,7 @@ function App() {
               <Route path="/preferences" element={<Preferences />}></Route>
               <Route path="/login" element={<Login />}></Route>
               <Route path="/artist-detail/:id" element={<ArtistDetail />} />
+              <Route path="/account" element={<Account />} />
             </Routes>
           </div>
         </Router>
