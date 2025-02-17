@@ -46,7 +46,7 @@ const Account = () => {
                 </div>
               </Link>
               <Link
-                to=""
+                to="../account/subscription/update-payment-details"
                 className=" w-full flex h-[48%]  bg-neutral-700/60 rounded-md transition-colors hover:bg-neutral-700/30 justify-center items-center p-8 focus:border-4"
               >
                 <div className="space-y-2">

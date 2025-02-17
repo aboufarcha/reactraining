@@ -9,6 +9,7 @@ import Profile from "./pages/account/profile/Profile";
 import ManagePlan from "./pages/account/managePlan/ManagePlan";
 import PlayList from "./pages/account/playList/PlayList";
 import Address from "./pages/account/address/Address";
+import UpdatePaymentDetails from "./pages/account/subsciption/updatePaymentDetails";
 
 function App() {
   const queryClient = new QueryClient();
@@ -30,6 +31,10 @@ function App() {
               />
               <Route path="/account/recover-playlists" element={<PlayList />} />
               <Route path="/account/address" element={<Address />} />
+              <Route
+                path="/account/subscription/update-payment-details"
+                element={<UpdatePaymentDetails />}
+              />
             </Routes>
           </div>
         </Router>
