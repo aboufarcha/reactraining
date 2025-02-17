@@ -12,7 +12,7 @@ const AccountOptions = () => {
         </h1>
         <Link
           to="../account/profile"
-          className="block  grid  md:grid-cols-4 grid-cols-3 grid-4 w-full  h-[3.5rem] rounded-md text-sm text-neutral-50 transition-colors hover:bg-neutral-800"
+          className="block  grid  md:grid-cols-4 grid-cols-3 grid-4 w-full  h-[3.5rem] rounded-md text-sm text-neutral-50 transition-colors hover:bg-neutral-800 focus:border-2"
         >
           <div className="col-span-3 flex items-center px-2">
             <div className="rounded-md bg-neutral-700 justify-center items-center p-2">
@@ -26,7 +26,10 @@ const AccountOptions = () => {
             <GoChevronRight className="w-7 h-7 mr-0.5 text-neutral-50 "></GoChevronRight>
           </div>
         </Link>
-        <button className="block  grid  md:grid-cols-4 grid-cols-3 grid-4 w-full  h-[3.5rem] rounded-md text-sm text-neutral-50 transition-colors hover:bg-neutral-800">
+        <Link
+          to="../account/recover-playlists"
+          className="block  grid  md:grid-cols-4 grid-cols-3 grid-4 w-full  h-[3.5rem] rounded-md text-sm text-neutral-50 transition-colors hover:bg-neutral-800 focus:border-2"
+        >
           <div className="col-span-3 flex items-center px-2">
             <div className="rounded-md bg-neutral-700 justify-center items-center p-2">
               <RxReload className="h-5 w-5 text-neutral-400" />
@@ -38,8 +41,11 @@ const AccountOptions = () => {
           <div className="col-span-1 flex items-center justify-end pr-5">
             <GoChevronRight className="w-7 h-7 mr-0.5 text-neutral-50 "></GoChevronRight>
           </div>
-        </button>
-        <button className="block  grid  md:grid-cols-4 grid-cols-3 grid-4 w-full  h-[3.5rem] rounded-md text-sm text-neutral-50 transition-colors hover:bg-neutral-800">
+        </Link>
+        <Link
+          to="../account/address"
+          className="block  grid  md:grid-cols-4 grid-cols-3 grid-4 w-full  h-[3.5rem] rounded-md text-sm text-neutral-50 transition-colors hover:bg-neutral-800 focus:border-2"
+        >
           <div className="col-span-3 flex items-center px-2">
             <div className="rounded-md bg-neutral-700 justify-center items-center p-2">
               <GoHome className="h-5 w-5 text-neutral-400" />
@@ -51,7 +57,7 @@ const AccountOptions = () => {
           <div className="col-span-1 flex items-center justify-end pr-5">
             <GoChevronRight className="w-7 h-7 mr-0.5 text-neutral-50 "></GoChevronRight>
           </div>
-        </button>
+        </Link>
       </div>
     </div>
   );

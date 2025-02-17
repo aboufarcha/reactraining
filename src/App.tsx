@@ -6,6 +6,9 @@ import Login from "./pages/login/Login";
 import Preferences from "./pages/preferences/Preferences";
 import Account from "./pages/account/Account";
 import Profile from "./pages/account/profile/Profile";
+import ManagePlan from "./pages/account/managePlan/ManagePlan";
+import PlayList from "./pages/account/playList/PlayList";
+import Address from "./pages/account/address/Address";
 
 function App() {
   const queryClient = new QueryClient();
@@ -21,6 +24,12 @@ function App() {
               <Route path="/artist-detail/:id" element={<ArtistDetail />} />
               <Route path="/account" element={<Account />} />
               <Route path="/account/profile" element={<Profile />} />
+              <Route
+                path="/account/manage-your-plan"
+                element={<ManagePlan />}
+              />
+              <Route path="/account/recover-playlists" element={<PlayList />} />
+              <Route path="/account/address" element={<Address />} />
             </Routes>
           </div>
         </Router>

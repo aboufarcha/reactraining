@@ -1,8 +1,12 @@
 import { FaSpotify } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Subscription = () => {
   return (
-    <div className="col-span-4 bg-neutral-700/60 transition-colors hover:bg-neutral-700/30 w-full rounded-md px-5 py-3 space-y-5">
+    <Link
+      to="../account/manage-your-plan"
+      className="col-span-4 bg-neutral-700/60 transition-colors hover:bg-neutral-700/30 w-full rounded-md px-5 py-3 space-y-5 focus:border-4"
+    >
       <div className="space-y-2 pt-2 pb-3 ">
         <div className="w-full flex items-center justify-between">
           <p className="text-xs text-neutral-100 font-medium">
@@ -33,7 +37,7 @@ const Subscription = () => {
           <span className="text-gray-700">C</span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
