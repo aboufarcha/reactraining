@@ -1,10 +1,15 @@
 import { GoSearch } from "react-icons/go";
 import Header from "./headers/Header";
 import Subscription from "./subsciption/Subsciption";
-import { FaPenClip } from "react-icons/fa6";
 import { LuPen } from "react-icons/lu";
 import { BsCreditCard } from "react-icons/bs";
 import AccountOptions from "./account/AccountOptions";
+import SubscriptionOptions from "./account/SubscriptionOptions";
+import PaiementOptions from "./account/PaiementOptions";
+import SecurityOptions from "./account/SecurityOptions";
+import AideOptions from "./account/AideOptions";
+import Footer from "../../components/footer/Footer";
+import { Link } from "react-router-dom";
 
 const Account = () => {
   return (
@@ -26,7 +31,10 @@ const Account = () => {
           </div>
           <Subscription></Subscription>
           <div className="col-span-2 w-full rounded-md ">
-            <div className=" w-full flex h-[48%]  bg-neutral-700/60 rounded-md transition-colors hover:bg-neutral-700/30 justify-center items-center p-8 mb-3">
+            <Link
+              to="../account/profile"
+              className=" w-full flex h-[48%]  bg-neutral-700/60 rounded-md transition-colors hover:bg-neutral-700/30 justify-center items-center p-8 mb-3"
+            >
               <div className="space-y-2">
                 <p>
                   <LuPen className="h-6 w-6 w-[100%] "></LuPen>
@@ -35,7 +43,7 @@ const Account = () => {
                   <strong>Modifier le profil</strong>
                 </p>
               </div>
-            </div>
+            </Link>
             <div className=" w-full flex h-[48%]  bg-neutral-700/60 rounded-md transition-colors hover:bg-neutral-700/30 justify-center items-center p-8">
               <div className="space-y-2">
                 <p>
@@ -48,7 +56,12 @@ const Account = () => {
             </div>
           </div>
           <AccountOptions></AccountOptions>
+          <SubscriptionOptions></SubscriptionOptions>
+          <PaiementOptions></PaiementOptions>
+          <SecurityOptions></SecurityOptions>
+          <AideOptions></AideOptions>
         </div>
+        <Footer></Footer>
       </div>
     </div>
   );

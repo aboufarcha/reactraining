@@ -105,7 +105,10 @@ const Avatar = () => {
       {isOpen && (
         <div className="origin-top-right z-50 absolute right-0 mt-[25rem] w-[25rem]  rounded-md shadow-lg bg-neutral-800 ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
-            <button className="block  grid  md:grid-cols-4 grid-cols-3 grid-4 w-full px-4 py-2 h-[3rem] text-sm text-neutral-50 hover:bg-neutral-500">
+            <Link
+              to={"../account"}
+              className="block  grid  md:grid-cols-4 grid-cols-3 grid-4 w-full px-4 py-2 h-[3rem] text-sm text-neutral-50 hover:bg-neutral-500"
+            >
               <div className="col-span-3 flex items-center">
                 <p className="text-neutral-300 font-semibold font-normal pt-1 md:block hidden hover:underline">
                   Compte
@@ -114,7 +117,7 @@ const Avatar = () => {
               <div className="col-span-1 flex items-center justify-end">
                 <RiShareBoxLine className="justify-end text-2xl"></RiShareBoxLine>
               </div>
-            </button>
+            </Link>
             <button className="block  grid  md:grid-cols-4 grid-cols-3 grid-4 w-full px-4 py-2 h-[3rem] text-sm text-neutral-50 hover:bg-neutral-500">
               <div className="col-span-3 flex items-center">
                 <p className="text-neutral-300 text-sm font-bold text-sm pt-1 md:block hidden hover:underline">
